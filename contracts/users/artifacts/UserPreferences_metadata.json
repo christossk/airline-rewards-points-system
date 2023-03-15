@@ -1,0 +1,220 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "receiveEmails",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "receivePromotions",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "receiveNotifications",
+						"type": "bool"
+					}
+				],
+				"name": "PreferencesUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "_receiveEmails",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_receivePromotions",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_receiveNotifications",
+						"type": "bool"
+					}
+				],
+				"name": "updateUserPreferences",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "userPreferences",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "receiveEmails",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "receivePromotions",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "receiveNotifications",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"updateUserPreferences(address,bool,bool,bool)": {
+					"details": "Update the preferences for the given user's wallet address.",
+					"params": {
+						"_receiveEmails": "The updated preference for receiving emails.",
+						"_receiveNotifications": "The updated preference for receiving notifications.",
+						"_receivePromotions": "The updated preference for receiving promotions.",
+						"_user": "The wallet address of the user."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Users/chris/Documents/GitHub/AirlineRewards/contracts/users/UserPreferences.sol": "UserPreferences"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2",
+				"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"Users/chris/Documents/GitHub/AirlineRewards/contracts/users/UserPreferences.sol": {
+			"keccak256": "0x86281c91887eb353578904ab7751575c701ade04f1c89e5aa822f121c32427a2",
+			"urls": [
+				"bzz-raw://2513b1548c4e6b3e870a7a55ee848541b43b660f26e08bcbe0ebe5ea9a1755ef",
+				"dweb:/ipfs/QmWoiybwaJCAXT5aeUp6HY3yVv3WNBgSEPmXaxbKGky7fS"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,288 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_pointsManagementAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "pointsRequired",
+						"type": "uint256"
+					}
+				],
+				"name": "RewardItemAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					}
+				],
+				"name": "RewardItemRedeemed",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_pointsRequired",
+						"type": "uint256"
+					}
+				],
+				"name": "addRewardItem",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_itemId",
+						"type": "uint256"
+					}
+				],
+				"name": "redeemRewardItem",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "rewardItems",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pointsRequired",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_itemId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_active",
+						"type": "bool"
+					}
+				],
+				"name": "updateRewardItemStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addRewardItem(string,uint256)": {
+					"details": "Add a new reward item to the contract.",
+					"params": {
+						"_name": "The name of the reward item.",
+						"_pointsRequired": "The number of points required to redeem the reward item."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"redeemRewardItem(uint256)": {
+					"details": "Redeem a reward item using points.",
+					"params": {
+						"_itemId": "The ID of the reward item to redeem."
+					}
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"updateRewardItemStatus(uint256,bool)": {
+					"details": "Update the status of a reward item.",
+					"params": {
+						"_active": "The new status of the reward item.",
+						"_itemId": "The ID of the reward item."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Users/chris/Documents/GitHub/AirlineRewards/contracts/points/PointsRedemption.sol": "PointsRedemption"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2",
+				"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"Users/chris/Documents/GitHub/AirlineRewards/contracts/points/PointsManagement.sol": {
+			"keccak256": "0xccae96d334d4c5da0ff3c485254e5547dd588880ee191d4517d3114bdcc7ecf3",
+			"urls": [
+				"bzz-raw://fdaeb47fd67ffd042707deeb512777006228354b8f04c34faf1da67960b2cd02",
+				"dweb:/ipfs/QmVnHxTGmjwogVQVtGQ26QE3GvU963Z3eyFSCiKfShNdsf"
+			]
+		},
+		"Users/chris/Documents/GitHub/AirlineRewards/contracts/points/PointsRedemption.sol": {
+			"keccak256": "0xce4d8e9aae1e84c39f25787d52d26866acece3abd1d51beb6304f2fffba6e9a3",
+			"urls": [
+				"bzz-raw://e534ffd8a30a0d5a0401ec080aa83e2cc730e5d6b9c4de90569a3631ec446f45",
+				"dweb:/ipfs/QmYYkwV8M1JgAv3QT2nyoeKcpQRg4cZpxdZzUf2DCjJobd"
+			]
+		}
+	},
+	"version": 1
+}
