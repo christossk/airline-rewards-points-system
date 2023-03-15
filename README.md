@@ -75,8 +75,9 @@ To deploy the smart contracts, follow these steps:
     ```
    Replace `<your_network>` with the name of the network you configured in `truffle-config.js`.
 
-## Testing (pending)
+## Testing
 
+(pending)
 To run the provided unit tests, use the following command:
     ```
 truffle test
